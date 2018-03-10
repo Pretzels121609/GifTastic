@@ -1,5 +1,63 @@
 body {
-    height: 100vh;
-    background: url(../images/f59ef3b7e3b0303844a2d122a69562a8.png) no-repeat center top;
+    min-height: 100vh;
+    /*background: url(https://themerkle.com/wp-content/uploads/2017/05/bitcoin-bubble.jpg) no-repeat center top;*/
+    background: url(../images/f59ef3b7e3b0303844a2d122a69562a8.png) no-repeat center top fixed;
     background-size: cover;
+}
+#buttonwrap {
+    padding: 5% 0 1%;
+}
+button {
+    margin: 10px;
+    text-transform: capitalize;
+    font-size: 20px;
+}
+.btn-primary {
+    background-color: rgba(255,255,255, .65);
+    color: #007bff;
+    padding: 10px 30px;
+}
+form {
+    width: 65%;
+    margin: 0 auto;
+}
+label {
+    font-size: 40px;
+    padding: 20px;
+    text-transform: uppercase;
+}
+#alert {
+    color: red;
+    padding: 10px;
+    font-size: 24px;
+    text-transform: capitalize;
+}
+#submit {
+    text-transform: uppercase;
+}
+/* holds all gif in their wraps*/
+#gifwrap {
+    text-align: center;
+   
+    width: 65%;
+    margin: 5% auto;
+}
+
+/*wraps gif and text */
+.gWrap {
+    float: left;
+    text-align: center;
+    margin: 10px;
+
+}
+.gif {
+    height: 200px;
+    width: 200px;
+    border-radius:100%;
+    border: 1px solid #fff;
+}
+.gWrap p {
+    color:#fff;
+    font-size: 24px;
+    text-transform: uppercase;
 }

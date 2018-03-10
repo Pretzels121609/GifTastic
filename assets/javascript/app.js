@@ -78,18 +78,15 @@ $(document).on("click", ".option", function(){ //only use when any element you c
     }).then(function(results){
         console.log(results.data)
         var gifsArry = results.data
-        // call the funvtion in step 5, pass in gifsArry
+        // call the function in step 5, pass in gifsArry
+        createGifHtml(gifsArry)
     })
 })
 
 //5
-// create a function that take gifsArry as a argument 
-// loop through the results.data
-// create a div
-// create a p tag
+// create a function that takes gifsArry as a argument
 // get the rating
 // add the rating to the p tag
-// create an image tag
 // add an attr call src
 // get the still link
 // add the still link  to the src attr
@@ -100,7 +97,43 @@ $(document).on("click", ".option", function(){ //only use when any element you c
 // add an attr call data-state its value is "still"
 // append each img and p tag to the div created l:86
 // append the div to #gifwrap
+    function createGifHtml(gifsArry){
+        $("#gifwrap").empty()
 
+        // loop through the results.data
+        for (var i = 0; i < gifsArry.length; i++){
+            // create a div
+            var div = $("<div>")
+            div.addClass("gWrap")
+            // create a p tag
+            var p = $("<p>")
+            p.addClass("rating")
+            p.text(gifsArry[i].rating)
 
+        // create an image tag
+            var img = $("<img>")
+            img.addClass("gif")
+            img.attr("data-state","still")
+            img.attr("data-still", gifsArry[i].images.original_still.url)
+            img.attr("data-animate", gifsArry[i].images.original.url)
+            img.attr("src", gifsArry[i].images.original_still.url)
+            $(div).append(img, p)
+            $("#gifwrap").append(div)
+        }
+    }
+    
 // 6
-// animate and make is still
+// animate and then make it still
+        $(document).on("click", ".gif", function(){
+            var state = $(this).data("state")
+            if (state === "still"){
+                var url = $(this).data("animate")
+                $(this).attr("src", url)
+                $(this).data("state", "animate")
+            }
+            else {
+                var url = $(this).data("still")
+                $(this).attr("src", url)
+                $(this).data("state", "still")
+            }
+        })
