@@ -3,19 +3,44 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css"> 
     <title>GifTastic Sea Creatures</title>
 </head>
 <body>
+<!-- 
 
+-create a container for your buttons 
+- create a container for you form
+    create a form with a input and a button
+- create a container for your gifs
 
+-->
+<div class="wrapper" align="center">
+    <div id="buttonwrap">
+       <!-- BUTTONS will be dynamically added here! -->
+    </div>
+    <div id="formwrap" class="container">
+        <span id="alert"></span>
+        <form>
+            <div class="form-group">
+              <label for="search">Input a sea creature</label>
+              <input type="text" class="form-control" id="search">
+            </div>
+            <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <div id="gifwrap">
+        <!-- GIFS will be dynamically added here! -->
+    </div>
 
+</div>
 
     
 <script src="http://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
-<script scr="assets/javascript/app.js"></script>
+<script src="assets/javascript/app.js"></script>
 </body>
 </html>
