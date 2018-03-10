@@ -6,6 +6,7 @@ body {
 }
 #buttonwrap {
     padding: 5% 0 1%;
+ 
 }
 button {
     margin: 10px;
@@ -13,8 +14,8 @@ button {
     font-size: 20px;
 }
 .btn-primary {
-    background-color: rgba(255,255,255, .65);
-    color: #007bff;
+    background-color: rgba(4,101,218, .65);
+    color: #fff;
     padding: 10px 30px;
 }
 form {
@@ -38,7 +39,6 @@ label {
 /* holds all gif in their wraps*/
 #gifwrap {
     text-align: center;
-   
     width: 65%;
     margin: 5% auto;
 }
@@ -48,13 +48,14 @@ label {
     float: left;
     text-align: center;
     margin: 10px;
-
+    
 }
 .gif {
     height: 200px;
     width: 200px;
     border-radius:100%;
     border: 1px solid #fff;
+
 }
 .gWrap p {
     color:#fff;
