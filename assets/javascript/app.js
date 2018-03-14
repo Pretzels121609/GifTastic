@@ -52,14 +52,14 @@ $("#submit").on("click", function(event){
         $("#alert").text("try something else")
         $("#search").val("")
     }
-})
+});
 
 
 //3 
 // on click on #search remove any text from #alert
 $("#search").on("click", function(){
-    $("#alert").text(" ")
-})
+    $("#alert").text(" ");
+});
 
 
 //4 on click of .option button 
@@ -68,18 +68,18 @@ $("#search").on("click", function(){
 // make ajax call
 // console log result
 $(document).on("click", ".option", function(){ //only use when any element you click on is added dynamically
-    var selectButton = $(this).text()
-    console.log(selectButton)
+    var selectButton = $(this).text();
+    console.log(selectButton);
     var authKey = "&apikey=SMAj066wT0ihGKG0qdObtj1dx2Gpb9cb";
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + selectButton + "&limit=10" + authKey;
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function(results){
-        console.log(results.data)
-        var gifsArry = results.data
+        console.log(results.data);
+        var gifsArry = results.data;
         // call the function in step 5, pass in gifsArry
-        createGifHtml(gifsArry)
+        createGifHtml(gifsArry);
     })
 })
 
@@ -103,22 +103,22 @@ $(document).on("click", ".option", function(){ //only use when any element you c
         // loop through the results.data
         for (var i = 0; i < gifsArry.length; i++){
             // create a div
-            var div = $("<div>")
-            div.addClass("gWrap")
+            var div = $("<div>");
+            div.addClass("gWrap");
             // create a p tag
-            var p = $("<p>")
-            p.addClass("rating")
-            p.text(gifsArry[i].rating)
+            var p = $("<p>");
+            p.addClass("rating");
+            p.text(gifsArry[i].rating);
 
         // create an image tag
-            var img = $("<img>")
-            img.addClass("gif")
-            img.attr("data-state","still")
-            img.attr("data-still", gifsArry[i].images.original_still.url)
-            img.attr("data-animate", gifsArry[i].images.original.url)
-            img.attr("src", gifsArry[i].images.original_still.url)
-            $(div).append(img, p)
-            $("#gifwrap").append(div)
+            var img = $("<img>");
+            img.addClass("gif");
+            img.attr("data-state","still");
+            img.attr("data-still", gifsArry[i].images.original_still.url);
+            img.attr("data-animate", gifsArry[i].images.original.url);
+            img.attr("src", gifsArry[i].images.original_still.url);
+            $(div).append(img, p);
+            $("#gifwrap").append(div);
         }
     }
     
